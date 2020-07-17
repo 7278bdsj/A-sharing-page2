@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <title>充值</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/payFail.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<script src="./js/jquery-2.2.1.min.js"></script>
+<body>
+  <div class="payMain">
+    <div class="payIcon">
+      <i class="iconfont icon-guanbi"></i>
+    </div>
+    <span class="payNum">￥6.00</span><br>
+    <span class="payMessage">支付失败</span>
+    <div class="failBtn">返回充值页面</div>
+  </div>
+</body>
+<script>
+  //获取到当前页面的href
+  var href=window.location.href;
+  var amount=href.split("?")[1].split("=")[1];
+  $('.payNum').text("￥"+amount);
+  $('.failBtn').on('click',function(){
+    window.location.href='wxhref.html';
+  })
+</script>
+</html>

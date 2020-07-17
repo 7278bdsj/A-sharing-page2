@@ -1,0 +1,63 @@
+html,
+body {
+  height: 100%;
+  background-color: #F8F8F8FF;
+  overflow: hidden;
+}
+html .payMain,
+body .payMain {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+html .payMain .payIcon,
+body .payMain .payIcon {
+  width: 20vw;
+  height: 20vw;
+  background: linear-gradient(45deg, #fe3a66, #f24652);
+  border-radius: 50%;
+  margin-top: 30.2667vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .payMain .payIcon .iconfont,
+body .payMain .payIcon .iconfont {
+  font-size: 8vw;
+  font-weight: bolder;
+  color: white;
+}
+html .payMain .payNum,
+body .payMain .payNum {
+  font-size: 9.6vw;
+  font-weight: bold;
+  font-family: flex-grow;
+  color: #333333;
+  margin-top: 9.3333vw;
+}
+html .payMain .payMessage,
+body .payMain .payMessage {
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 5.2vw;
+}
+html .payMain .failBtn,
+body .payMain .failBtn {
+  width: 40vw;
+  height: 10.6667vw;
+  border-radius: 10.6667vw;
+  text-align: center;
+  line-height: 10.6667vw;
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #959599;
+  border: 1px solid #959599;
+  margin-top: 24vw;
+}

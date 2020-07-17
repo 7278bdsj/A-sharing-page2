@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <title>充值</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/topups.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<script src="./js/jquery-2.2.1.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<body>
+  <div class="pay_main">
+    <!-- <div class="top">充值</div> -->
+    <div class="bottom">
+      <div class="phone">
+        <span class="phoneNum">用户手机号码/ID</span>
+        <input type="text" placeholder="请输入用户手机号码/ID" class="phoneInput">
+        <div class="line"></div>
+        <span class="userID">昵称: 说不定赛U大</span>
+      </div>
+      <form class="pay">
+        <div class="payTitle">请选择需要充值的面额</div>
+        <div class="payMain">
+          <!-- <div class="payOne">4000钻石<div class="inputRadio"><input name="pay" type="radio" class="right" id="radio1"><label for="radio1" class="lab inputLab"><i class="iconfont icon-xuanzhong"></i></label><span class="left">￥6</span></div></div>
+          <div class="payOne">8000钻石<div class="inputRadio"><input name="pay" type="radio" class="right" id="radio2"><label for="radio2" class="lab inputLab"><i class="iconfont icon-xuanzhong"></i></label><span class="left">￥12</span></div></div>
+          <div class="payOne">12000钻石<div class="inputRadio"><input name="pay" type="radio" class="right" id="radio3"><label for="radio3" class="lab inputLab"><i class="iconfont icon-xuanzhong"></i></label><span class="left">￥18</span></div></div>
+          <div class="payOne">12000钻石<div class="inputRadio"><input name="pay" type="radio" class="right" id="radio4"><label for="radio4" class="lab inputLab"><i class="iconfont icon-xuanzhong"></i></label><span class="left">￥18</span></div></div>
+          <div class="payOne">12000钻石<div class="inputRadio"><input name="pay" type="radio" class="right" id="radio5"><label for="radio5" class="lab inputLab"><i class="iconfont icon-xuanzhong"></i></label><span class="left">￥18</span></div></div> -->
+        </div>
+      </form>
+      <div class="selectpay">
+        <span class="selectTitle">请选择支付方式</span>
+        <div class="wx">
+          <img src="./img/czzs_icon_wx_nor.png" alt="">
+        </div>
+        <div class="zfb">
+          <img src="./img/czzs_icon_zfb_nor.png" alt="">
+        </div>
+      </div>
+      <div class="submit">
+        <span class="submitMessage">温馨提示：充值前请确认您已满18周岁哦</span>
+        <div class="submitBtn">确认支付</div>
+        <div class="submitPro">
+          <div class="inputBox"><input type="checkbox" id="inputBox"><label data-check=1 for="inputBox" class="labs inputLab3"><i class="iconfont icon-xuanzhong"></i></label></div>
+          <span class="subText">充值前请阅读并同意</span>
+          <span class="subPro">《充值服务协议》</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tankuang">
+    <div class="tankuangMain">
+      <div class="quxiao">
+        <i class="iconfont icon-guanbi"></i>
+      </div>
+      <div class="head">充值服务协议</div>
+      <div class="bottom">
+        北京某某科技有限公司（以下简称“某某 科技”）在此特别提醒您（用户）在注册 成为用户之前，请认真阅读本《用户协 议》（以下简称“协议”），确保您充分 理解本协议中各条款。请您审慎阅读并 选择接受或不接受本协议。除非您接受 本协议所有条款，否则您无权注册、登 录或使用本协议所涉服务。您的注册、 登录。
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  //修改提交选框样式
+  $('.labs').on('click',function(){
+    if($('#inputBox').is(':checked')){
+      $('.labs').attr('class','labs inputLab3');
+      $('.labs').attr('data-check',1)
+    }else{
+      $('.labs').attr('class','labs inputLab4');
+      $('.labs').attr('data-check',2)
+    }
+  })
+  //显示隐藏弹窗
+  $('.subPro').on('click',function(){
+    $('.tankuang').fadeIn("fast");
+  });
+  $('.quxiao').on('click',function(){
+    $('.tankuang').fadeOut("fast");
+  });
+  $('#inputBox').on('click',function(){
+    checkIput();
+  })
+  //获取用户名
+  function getUser(){
+    $('.phoneInput').on('change',function(){
+      var mobile=$('.phoneInput').val();
+        $.ajax({
+          type: "POST",
+          url: "http://47.107.133.115/beyondvoice/api/recharge/getByMobile",
+          dataType:'json',
+          data:{
+            mobile:mobile
+          },
+          success:function (msg){
+            if(msg.code==1){
+              console.log(msg.data.nick);
+              $('.userID').text(msg.data.nick);
+            }else{
+              $('.userID').text("此用户不存在");
+            }
+          }
+        })
+    })
+  };
+  getUser();
+  //判断input是否被选中并绑定或取消充值事件
+  function checkIput(){
+    if($('#inputBox').is(':checked')){
+      $('.submitBtn').css({'opacity':1,'filter':'alpha(opacity = 100)','-moz-opacity':1})
+      $('.submitBtn').on('click',toUps);
+    }else{
+      $('.submitBtn').css({'opacity':0.4,'filter':'alpha(opacity = 40)','-moz-opacity':0.4})
+      $('.submitBtn').off();
+    }
+  }
+  //获取充值模板并插入数据
+  function appendData(){
+    var data='';
+    $.ajax({
+      type: "POST",
+      url: "http://112.74.105.6/strangerLetter/api/recharge/listRecharge",
+      dataType:'json',
+      success: function(msg){
+      //创建标签并插入
+        var data=msg.data.list;
+        for(var i=0;i<data.length;i++){
+          var item1="<div class='payOne'>"+data[i].integral+"钻石<div class='inputRadio'><input name='pay' type='radio' class='right' data-id="+data[i].id+" id='radio"+(i+1)+"'><label for='radio"+(i+1)+"' class='lab inputLab'><i class='iconfont icon-xuanzhong'></i></label><span class='left'>￥"+data[i].amount+"</span></div></div>";
+          $('.payMain').append(item1);
+        }
+        $(".payMain").trigger("create");
+        //修改单选框样式
+        $('.lab').each(function(){
+          $(this).on('click',function(){
+            $('.lab').attr('class','lab inputLab');
+            $(this).attr("class",'lab inputLab2');
+          })
+        })
+      }
+    })
+  }
+  appendData();
+  //充值函数
+  function toUps(){
+    var payType=2;
+      var mobile=$('.phoneInput').val();
+      var rechargeConfigId='';
+      var listInput=document.getElementsByClassName('right');
+      var amount=null;
+      for(var i=0;i<listInput.length;i++){
+        if(listInput[i].checked==true){
+          rechargeConfigId=parseInt($(listInput[i]).attr('data-id'));
+          amount=$(listInput[i]).nextAll('span')[0].innerHTML.split('￥')[1];
+          console.log(amount);
+        }
+      }
+      // console.log(payType,mobile,typeof(rechargeConfigId));
+      // 获取网页授权的code
+      var code=window.location.href.split("?")[1].split("&")[0].split('=')[1];
+        console.log("code",code);
+        $.ajax({
+          type: "POST",
+          url: "http://x-yue.cn/beyondvoice/api/recharge/callBack",
+          dataType:'json',
+          data:{
+            code:code
+          },
+          success:function(msg){
+            var openId=msg.data.openid;
+            console.log('msg1',msg)
+            $.ajax({
+              type: "POST",
+              url: "http://47.107.133.115/beyondvoice/api/recharge/create",
+              dataType:'json',
+              data:{
+                mobile:mobile,
+                openId:openId,
+                rechargeConfigId:rechargeConfigId,
+                payType:payType
+              },
+              success:function(msg){
+                console.log('msg2',msg);
+                if(msg.code==2){
+                  window.location.href='./payFail.html?amount='+amount;
+                }else{
+                  var data=msg.data;
+                  var package=data.package;
+                  var appid=data.appid;
+                  var sign=data.sign;
+                  var partnerid=data.partnerid;
+                  var prepayid=data.prepayid;
+                  var noncestr=data.noncestr;
+                  var timestamp=data.timestamp;
+                  wx.config({
+                  debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                  appId: appid, // 必填，公众号的唯一标识
+                  timestamp: timestamp, // 必填，生成签名的时间戳
+                  nonceStr: noncestr, // 必填，生成签名的随机串
+                  signature: sign,// 必填，签名
+                  jsApiList: ['chooseImage'] // 必填，需要使用的JS接口列表
+                  });
+                  wx.ready(function(res){
+
+                  });
+                  wx.error(function(res){
+
+                  }); 
+                  // wx.chooseWXPay({
+                  //   timestamp: timestamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+                  //   nonceStr: noncestr, // 支付签名随机串，不长于 32 位
+                  //   package: package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）
+                  //   signType: 'MD5', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+                  //   paySign: sign, // 支付签名
+                  //   success: function (res) {
+                  //     // 支付成功后的回调函数
+                  //     console.log(res);
+                  //   }
+                  // });
+                  }
+              },
+              error: function(err) {
+                console.log(err);
+              }
+            })
+          }
+        })
+      // $.ajax({
+      //   type: "POST",
+      //   url: "http://47.107.133.115/beyondvoice/api/recharge/create",
+      //   dataType:'json',
+      //   data:{
+      //     payType:payType,
+      //     mobile:mobile,
+      //     rechargeConfigId:rechargeConfigId
+      //   },
+      //   success: function(msg){
+        // var data=msg.data;
+        // var package=data.package;
+        // var appid=data.appid;
+        // var sign=data.sign;
+        // var partnerid=data.partnerid;
+        // var prepayid=data.prepayid;
+        // var noncestr=data.noncestr;
+        // var timestamp=data.timestamp;
+      //   //注入微信权限
+        // wx.config({
+        //   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        //   appId: appid, // 必填，公众号的唯一标识
+        //   timestamp: timestamp, // 必填，生成签名的时间戳
+        //   nonceStr: noncestr, // 必填，生成签名的随机串
+        //   signature: sign,// 必填，签名
+        //   jsApiList: ['chooseImage'] // 必填，需要使用的JS接口列表
+        // });
+        // wx.ready(function(){
+
+        // });
+        // wx.error(function(res){
+
+        // }); 
+        // wx.chooseWXPay({
+        //   timestamp: timestamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+        //   nonceStr: noncestr, // 支付签名随机串，不长于 32 位
+        //   package: package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）
+        //   signType: 'MD5', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+        //   paySign: sign, // 支付签名
+        //   success: function (res) {
+        //     // 支付成功后的回调函数
+        //     console.log(res);
+        //   }
+        // });
+      // }
+      // })
+  };
+</script>
+</html>

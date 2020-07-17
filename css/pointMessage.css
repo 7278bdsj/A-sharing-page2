@@ -1,0 +1,159 @@
+html,
+body {
+  height: 100%;
+  background-color: #F8F8F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+html .pointMain,
+body .pointMain {
+  width: 92vw;
+  height: 82.6667vw;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 27.8667vw;
+  border-radius: 2.6667vw;
+}
+html .pointMain .message1,
+body .pointMain .message1,
+html .pointMain .message2,
+body .pointMain .message2,
+html .pointMain .message3,
+body .pointMain .message3 {
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333FF;
+  text-align: center;
+}
+html .pointMain .message1,
+body .pointMain .message1 {
+  margin-top: 17.6vw;
+}
+html .pointMain .message1 .messageLeft,
+body .pointMain .message1 .messageLeft {
+  color: #FF7443;
+}
+html .pointMain .message2,
+body .pointMain .message2 {
+  margin-top: 5.2vw;
+}
+html .pointMain .message2 .messageLeft,
+body .pointMain .message2 .messageLeft {
+  color: #714BFB;
+}
+html .pointMain .message3,
+body .pointMain .message3 {
+  margin-top: 5.2vw;
+}
+html .pointMain .messageBtn,
+body .pointMain .messageBtn {
+  width: 100%;
+  height: 10.9333vw;
+  margin-top: 13.3333vw;
+}
+html .pointMain .messageBtn .btn1,
+body .pointMain .messageBtn .btn1 {
+  width: 26.6667vw;
+  height: 10.6667vw;
+  border-radius: 20px;
+  border: 0.5px solid #FF7443;
+  text-align: center;
+  line-height: 10.6667vw;
+  color: #FF7443;
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: bold;
+  float: left;
+  margin-left: 14.6667vw;
+  box-sizing: border-box;
+}
+html .pointMain .messageBtn .btn2,
+body .pointMain .messageBtn .btn2 {
+  width: 26.6667vw;
+  height: 10.6667vw;
+  border-radius: 20px;
+  border: 1px solid #714bfc;
+  text-align: center;
+  line-height: 10.6667vw;
+  color: #ffffff;
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: bold;
+  float: right;
+  margin-right: 14.6667vw;
+  box-sizing: border-box;
+  background-color: #714bfc;
+}
+html .tankuang,
+body .tankuang {
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+html .tankuang .tankuangMain,
+body .tankuang .tankuangMain {
+  width: 64vw;
+  height: 39.4667vw;
+  background-color: #ffffff;
+  border-radius: 2.6667vw;
+  margin-top: 50.1333vw;
+  margin-left: 14.6667vw;
+  overflow: hidden;
+}
+html .tankuang .tankuangMain .head,
+body .tankuang .tankuangMain .head {
+  box-sizing: border-box;
+  padding-top: 8vw;
+  width: 100%;
+  height: 25.0667vw;
+  border-bottom: 1px solid #EEEEEEFF;
+  text-align: center;
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333333;
+}
+html .tankuang .tankuangMain .bottom,
+body .tankuang .tankuangMain .bottom {
+  width: 100%;
+  height: 23.4667vw;
+}
+html .tankuang .tankuangMain .bottom .left,
+body .tankuang .tankuangMain .bottom .left {
+  width: 50%;
+  height: 14.2667vw;
+  border-right: 1px solid #EEEEEEFF;
+  float: left;
+  text-align: center;
+  line-height: 14.2667vw;
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+html .tankuang .tankuangMain .bottom .right,
+body .tankuang .tankuangMain .bottom .right {
+  width: 49%;
+  height: 14.2667vw;
+  border-right: 1px solid #EEEEEEFF;
+  float: right;
+  text-align: center;
+  line-height: 14.2667vw;
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #714BFB;
+}

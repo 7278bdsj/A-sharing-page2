@@ -1,0 +1,437 @@
+html,
+body {
+  height: 100%;
+  background-color: #F8F8F8;
+}
+html .pay_main,
+body .pay_main {
+  width: 100vw;
+  overflow: hidden;
+}
+html .pay_main .bottom,
+body .pay_main .bottom {
+  width: 100vw;
+  background-color: #F8F8F8;
+  position: relative;
+  height: 160.8vw;
+}
+html .pay_main .bottom .phone,
+body .pay_main .bottom .phone {
+  width: 100vw;
+  height: 34vw;
+}
+html .pay_main .bottom .phone .phoneNum,
+body .pay_main .bottom .phone .phoneNum {
+  display: inline-block;
+  margin-left: 4.1333vw;
+  margin-top: 4.2667vw;
+  width: 40vw;
+  height: 3.4667vw;
+  font-size: 3.7333vw;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666666;
+}
+html .pay_main .bottom .phone .phoneInput,
+body .pay_main .bottom .phone .phoneInput {
+  width: 66.6667vw;
+  height: 4.1333vw;
+  margin-top: 6vw;
+  margin-left: 4.1333vw;
+  font-size: 5.3333vw;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  outline: none;
+  border: none;
+  background-color: #F8F8F8;
+}
+html .pay_main .bottom .phone .phoneInput::placeholder,
+body .pay_main .bottom .phone .phoneInput::placeholder {
+  font-size: 3.7333vw;
+  color: #999999;
+}
+html .pay_main .bottom .phone .phoneInput::-webkit-input-placeholder,
+body .pay_main .bottom .phone .phoneInput::-webkit-input-placeholder {
+  font-size: 3.7333vw;
+  color: #999999;
+}
+html .pay_main .bottom .phone .phoneInput:-moz-placeholder,
+body .pay_main .bottom .phone .phoneInput:-moz-placeholder {
+  font-size: 3.7333vw;
+  color: #999999;
+}
+html .pay_main .bottom .phone .phoneInput::-moz-placeholder,
+body .pay_main .bottom .phone .phoneInput::-moz-placeholder {
+  font-size: 3.7333vw;
+  color: #999999;
+}
+html .pay_main .bottom .phone .phoneInput:-ms-input-placeholder,
+body .pay_main .bottom .phone .phoneInput:-ms-input-placeholder {
+  font-size: 3.7333vw;
+  color: #999999;
+}
+html .pay_main .bottom .phone .line,
+body .pay_main .bottom .phone .line {
+  width: 92vw;
+  height: 0.2667vw;
+  background-color: #EEEEEE;
+  margin-left: 4vw;
+  margin-top: 4vw;
+}
+html .pay_main .bottom .phone .userID,
+body .pay_main .bottom .phone .userID {
+  display: block;
+  width: 66.6667vw;
+  height: 3.3333vw;
+  margin-left: 4.2667vw;
+  margin-top: 2.9333vw;
+  font-size: 3.4667vw;
+  color: #666666;
+  font-family: PingFang-SC-Regular;
+  font-weight: Regular;
+}
+html .pay_main .bottom .pay,
+body .pay_main .bottom .pay {
+  width: 100vw;
+  height: 51.6vw;
+  background-color: #ffffff;
+}
+html .pay_main .bottom .pay .payTitle,
+body .pay_main .bottom .pay .payTitle {
+  width: 100vw;
+  height: 11.7333vw;
+  padding-left: 4.1333vw;
+  line-height: 11.7333vw;
+  font-size: 3.7333vw;
+  font-family: PingFang-SC-Regular;
+  font-weight: Regular;
+  color: #666666;
+}
+html .pay_main .bottom .pay .payMain,
+body .pay_main .bottom .pay .payMain {
+  width: 100vw;
+  height: 39.7333vw;
+  overflow: auto;
+}
+html .pay_main .bottom .pay .payMain .payOne,
+body .pay_main .bottom .pay .payMain .payOne {
+  width: 100vw;
+  height: 13.24vw;
+  border-top: 0.1333vw solid #EEEEEE;
+  padding-left: 4vw;
+  line-height: 13.2vw;
+  color: #333333;
+  font-size: 3.7333vw;
+  font-family: PingFang SC;
+  font-weight: 400;
+}
+html .pay_main .bottom .pay .payMain .payOne .inputRadio,
+body .pay_main .bottom .pay .payMain .payOne .inputRadio {
+  width: 40vw;
+  height: 13.0667vw;
+  float: right;
+  padding-right: 4vw;
+  position: relative;
+}
+html .pay_main .bottom .pay .payMain .payOne .inputRadio .right,
+body .pay_main .bottom .pay .payMain .payOne .inputRadio .right {
+  float: right;
+  display: block;
+  margin-top: 5.3333vw;
+  margin-right: 1.3333vw;
+}
+html .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab,
+body .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  border: 1px solid #999999FF;
+  display: block;
+  position: absolute;
+  top: 4.8vw;
+  right: 4.8vw;
+  background-color: white;
+  z-index: 500;
+}
+html .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab .iconfont,
+body .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab .iconfont {
+  width: 4vw;
+  height: 4vw;
+  display: block;
+  text-align: center;
+  line-height: 4vw;
+  font-size: 1.5vw;
+  color: white;
+  padding-right: 0.4vw;
+}
+html .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab2,
+body .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab2 {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  border: 1px solid #999999FF;
+  display: block;
+  position: absolute;
+  top: 4.8vw;
+  right: 4.8vw;
+  background-color: #714BFB;
+  z-index: 500;
+}
+html .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab2 .iconfont,
+body .pay_main .bottom .pay .payMain .payOne .inputRadio .inputLab2 .iconfont {
+  width: 4vw;
+  height: 4vw;
+  display: block;
+  text-align: center;
+  line-height: 4vw;
+  font-size: 1.5vw;
+  color: white;
+  padding-right: 0.4vw;
+}
+html .pay_main .bottom .pay .payMain .payOne .inputRadio .left,
+body .pay_main .bottom .pay .payMain .payOne .inputRadio .left {
+  float: right;
+  display: block;
+  width: 20vw;
+  height: 13.0667vw;
+  font-size: 3.4667vw;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: #714BFB;
+  text-align: right;
+  padding-right: 5.8vw;
+}
+html .pay_main .bottom .selectpay,
+body .pay_main .bottom .selectpay {
+  width: 100%;
+  overflow: auto;
+}
+html .pay_main .bottom .selectpay .selectTitle,
+body .pay_main .bottom .selectpay .selectTitle {
+  display: block;
+  font-size: 3.7333vw;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #656565;
+  margin-top: 4vw;
+  margin-left: 4vw;
+}
+html .pay_main .bottom .selectpay .wx,
+body .pay_main .bottom .selectpay .wx {
+  width: 29.3333vw;
+  height: 20vw;
+  background-image: url('../img/czzs_btn_wx_selected.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2.6667vw;
+  margin-top: 4vw;
+  margin-left: 4vw;
+  float: left;
+}
+html .pay_main .bottom .selectpay .wx img,
+body .pay_main .bottom .selectpay .wx img {
+  width: 100%;
+  height: 100%;
+}
+html .pay_main .bottom .selectpay .zfb,
+body .pay_main .bottom .selectpay .zfb {
+  width: 29.3333vw;
+  height: 20vw;
+  background-color: #ffffff;
+  border-radius: 2.6667vw;
+  margin-top: 4vw;
+  margin-left: 4vw;
+  float: left;
+}
+html .pay_main .bottom .selectpay .zfb img,
+body .pay_main .bottom .selectpay .zfb img {
+  width: 100%;
+  height: 100%;
+}
+html .pay_main .bottom .submit,
+body .pay_main .bottom .submit {
+  width: 100vw;
+  height: 75.2vw;
+  position: relative;
+}
+html .pay_main .bottom .submit .submitMessage,
+body .pay_main .bottom .submit .submitMessage {
+  color: #999999;
+  font-size: 3.2vw;
+  font-weight: 400;
+  font-family: PingFang SC;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 10.4vw;
+  left: 20.9333vw;
+}
+html .pay_main .bottom .submit .submitBtn,
+body .pay_main .bottom .submit .submitBtn {
+  width: 82.6667vw;
+  height: 10.6667vw;
+  background-color: #714BFB;
+  border-radius: 5.3333vw;
+  position: absolute;
+  top: 17.4667vw;
+  left: 8.6667vw;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 4vw;
+  line-height: 10.6667vw;
+  text-align: center;
+  opacity: 0.4;
+  -moz-opacity: 0.4;
+}
+html .pay_main .bottom .submit .submitPro,
+body .pay_main .bottom .submit .submitPro {
+  width: 61vw;
+  height: 3.6vw;
+  position: absolute;
+  top: 36.1333vw;
+  left: 20.6667vw;
+}
+html .pay_main .bottom .submit .submitPro .inputBox,
+body .pay_main .bottom .submit .submitPro .inputBox {
+  width: 4vw;
+  height: 4vw;
+  float: left;
+}
+html .pay_main .bottom .submit .submitPro .inputBox #inputBox,
+body .pay_main .bottom .submit .submitPro .inputBox #inputBox {
+  display: block;
+  position: absolute;
+  margin: 0.6667vw;
+  top: 0.1333vw;
+  left: 0vw;
+}
+html .pay_main .bottom .submit .submitPro .inputBox .inputLab3,
+body .pay_main .bottom .submit .submitPro .inputBox .inputLab3 {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  border: 1px solid #999999FF;
+  display: block;
+  position: absolute;
+  top: -0.2667vw;
+  left: 0;
+  background-color: white;
+  z-index: 500;
+}
+html .pay_main .bottom .submit .submitPro .inputBox .inputLab3 .iconfont,
+body .pay_main .bottom .submit .submitPro .inputBox .inputLab3 .iconfont {
+  width: 4vw;
+  height: 4vw;
+  display: block;
+  text-align: center;
+  line-height: 4vw;
+  font-size: 1.5vw;
+  color: white;
+  padding-right: 0.4vw;
+}
+html .pay_main .bottom .submit .submitPro .inputBox .inputLab4,
+body .pay_main .bottom .submit .submitPro .inputBox .inputLab4 {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  border: 1px solid #999999FF;
+  display: block;
+  position: absolute;
+  top: 0.4vw;
+  left: 0;
+  background-color: #714BFB;
+  z-index: 500;
+}
+html .pay_main .bottom .submit .submitPro .inputBox .inputLab4 .iconfont,
+body .pay_main .bottom .submit .submitPro .inputBox .inputLab4 .iconfont {
+  width: 4vw;
+  height: 4vw;
+  display: block;
+  text-align: center;
+  line-height: 4vw;
+  font-size: 1.5vw;
+  color: white;
+  padding-right: 0.4vw;
+}
+html .pay_main .bottom .submit .submitPro .subText,
+body .pay_main .bottom .submit .submitPro .subText {
+  font-size: 3.2vw;
+  color: #666666;
+  font-family: PingFang SC;
+  font-weight: 400;
+  display: inline-block;
+  line-height: 4vw;
+  padding-left: 2.5333vw;
+}
+html .pay_main .bottom .submit .submitPro .subPro,
+body .pay_main .bottom .submit .submitPro .subPro {
+  font-size: 3.2vw;
+  color: #FF7443;
+  font-family: PingFang SC;
+  font-weight: 400;
+  display: block;
+  float: right;
+  line-height: 4vw;
+}
+html .tankuang,
+body .tankuang {
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+html .tankuang .tankuangMain,
+body .tankuang .tankuangMain {
+  width: 69.3333vw;
+  height: 65.3333vw;
+  background-color: #ffffff;
+  border-radius: 2.6667vw;
+  margin-top: 50.1333vw;
+  margin-left: 15.3333vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+html .tankuang .tankuangMain .quxiao,
+body .tankuang .tankuangMain .quxiao {
+  width: 2.9333vw;
+  height: 2.9333vw;
+  position: absolute;
+  top: 4vw;
+  right: 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .tankuang .tankuangMain .quxiao .iconfont,
+body .tankuang .tankuangMain .quxiao .iconfont {
+  color: #999999FF;
+  font-size: 2.9333vw;
+}
+html .tankuang .tankuangMain .head,
+body .tankuang .tankuangMain .head {
+  margin-top: 5.3333vw;
+  font-size: 4vw;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+html .tankuang .tankuangMain .bottom,
+body .tankuang .tankuangMain .bottom {
+  width: 60.4vw;
+  height: 47.2vw;
+  margin-top: 5.3333vw;
+  font-size: 3.4667vw;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000000;
+  line-height: 5.3333vw;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>邀请好友</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<script src="./js/jquery-2.2.1.min.js"></script>
+<body>
+  <div class="main">
+    <div class="main_title">
+      <div class="logo">
+        <img src="./img/yqh5_icon_logo_dis.png" alt="">
+      </div>
+      <div class="title">
+        <span class="title1">陌信直播</span><br>
+        <span class="title2">欢迎下载陌信直播</span>
+      </div>
+      <div class="download">
+        下载
+      </div>
+    </div>
+    <div class="main_bottom">
+      <span class="reg_title">新用户注册</span>
+      <div class="reg_input1">
+        <input type="text" placeholder="请输入手机号码" class="phoneNum">
+        <div class="border_bottom"></div> 
+      </div>
+      <div class="reg_input2">
+        <input type="text" placeholder="请输入验证码" class="code">
+        <div class="input_code">发送验证码</div>
+        <div class="border_bottom"></div> 
+      </div>
+      <div class="reg_input3">
+        <input data-state='1' type="password" placeholder="请输入6-12位新密码(字符组成)" class="password">
+        <div class="eye eye_icon_close"></div>
+        <div class="border_bottom"></div> 
+      </div>
+      <div class="reg_input4">
+        <div class="pro before_select" data-pro="1"></div>
+        <span class="reg_pro">我已阅读并同意以下协议<span class="im_pro">《注册协议》</span></span>
+        <div class="zhuc subBtn">立即注册</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    //匹配不同设备的下载
+    var down = $('.download');
+    down.on("click", function () {
+      if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+        var url="";
+        // ios
+        $.ajax({
+          type: "POST",
+          url: "http://112.74.105.6/strangerLetter/api/app/version/getNewIos",
+          dataType: "json",
+          success: function (res) {
+            url=res.data.url
+            window.location.href = url;
+          }
+        });
+      } else if (navigator.userAgent.match(/android/i)) {
+        var url="";
+        // android
+        $.ajax({
+          type: "POST",
+          url: "http://112.74.105.6/strangerLetter/api/app/version/getNewAndroid",
+          dataType: "json",
+          success: function (res) {
+            url=res.data.url
+            window.location.href = url;
+          }
+        });
+      }
+    });
+    //发送验证码
+    function sendCode(){
+      var code=$('.input_code');
+      code.on('click',Countdown)
+    };
+    function Countdown(){
+      var mobile=$('.phoneNum').val();
+      $('.input_code').off("click");
+        $.ajax({
+          type: "POST",
+          url: "http://47.96.132.95:8080/strangerLetter/api/account/code",
+          data:{
+            mobile:mobile,
+            type:0
+          },
+          dataType: "json",
+          success: function (res) {
+            console.log(res);
+          }
+        });
+        var second=60;
+        var input_code=$('.input_code');
+        var timer=setInterval(function(){
+          second--;
+          input_code.text("重新获取("+second+")");
+          input_code.css("color","#999999")
+          if(second==0){
+            console.log("清除定时器");
+            clearInterval(timer);
+            $('.input_code').on("click",Countdown);
+            input_code.text("发送验证码");
+            input_code.css("color","rgba(255,119,101,1)");
+          }
+        },1000);
+      }
+    sendCode();
+    //修改密码的显示和隐藏状态
+    function changeState(){
+      var eye=$(".eye").on("click",function(){
+        if($('.password').attr("data-state")=="1"){
+          eye.attr("class","eye eye_icon_open");
+          $('.password').attr("data-state","2");
+          $('.password').attr("type","text");
+        }else{
+          eye.attr("class","eye eye_icon_close");
+          $('.password').attr("data-state","1");
+          $('.password').attr("type","password");
+        }
+      })
+    }
+    changeState();
+    //修改协议选中样式
+    function changePro(){
+      var pro=$('.pro');
+      pro.on("click",function(){
+        if(pro.attr("data-pro")=="1"){
+          var mobile=$('.phoneNum').val();
+          var code=$('.code').val();
+          var password=$(".password").val();
+          console.log(mobile,code,password);
+          $('.pro').attr("class","pro selected");
+          $('.zhuc').attr("class","zhuc subBtnSelect");
+          //注册事件
+          $('.zhuc').on('click',function(){
+            $.ajax({
+                  type: "POST",
+                  url: "http://47.96.132.95:8080/strangerLetter/api/account/register",
+                  data: {
+                    mobile:mobile,
+                    code:code,
+                    password:password
+                  },
+                  dataType: "json",
+                  success: function (res) {
+                    console.log(res);
+                  }
+                });
+          })
+          pro.attr("data-pro","2");
+        }else{
+          $('.pro').attr("class","pro before_select");
+          $('.zhuc').attr("class","zhuc subBtn");
+          pro.attr("data-pro","1");
+          $('.zhuc').off('click');
+        }
+      })
+    }
+    changePro();
+  </script>
+</body>
+
+</html>

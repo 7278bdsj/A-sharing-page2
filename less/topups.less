@@ -1,0 +1,393 @@
+html,body{
+  height: 100%;
+  background-color: #F8F8F8;
+  .pay_main{
+    width: 100vw;
+    overflow: hidden;
+    .bottom{
+      width: 100vw;
+      background-color: #F8F8F8;
+      position: relative;
+      height: 160.8vw;
+      .phone{
+        width: 100vw;
+        height: 34vw;
+        .phoneNum{
+          display: inline-block;
+          margin-left: 4.1333vw;
+          margin-top: 4.2667vw;
+          width: 40vw;
+          height: 3.4667vw;
+          font-size: 3.7333vw;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:rgba(102,102,102,1);
+        }
+        .phoneInput{
+          width: 66.6667vw;
+          height: 4.1333vw;
+          margin-top: 6vw;
+          margin-left: 4.1333vw;
+          font-size: 5.3333vw;
+          font-family:PingFang SC;
+          font-weight:500;
+          color:rgba(51,51,51,1);
+          outline: none;
+          border: none;
+          background-color: #F8F8F8;
+        }
+        .phoneInput::placeholder{
+          font-size: 3.7333vw;
+          color: #999999;
+        }
+        .phoneInput::-webkit-input-placeholder{
+          font-size: 3.7333vw;
+          color: #999999;
+        }
+        .phoneInput:-moz-placeholder{
+          font-size: 3.7333vw;
+          color: #999999;
+        }
+        .phoneInput::-moz-placeholder{
+          font-size: 3.7333vw;
+          color: #999999;
+        }
+        .phoneInput:-ms-input-placeholder{
+          font-size: 3.7333vw;
+          color: #999999;
+        }
+        .line{
+          width: 92vw;
+          height: 0.2667vw;
+          background-color: #EEEEEE;
+          margin-left: 4vw;
+          margin-top: 4vw;
+        }
+        .userID{
+          display: block;
+          width: 66.6667vw;
+          height: 3.3333vw;
+          margin-left: 4.2667vw;
+          margin-top: 2.9333vw;
+          font-size: 3.4667vw;
+          color: #666666;
+          font-family: PingFang-SC-Regular;
+          font-weight: Regular;
+        }
+      }
+      .pay{
+        width: 100vw;
+        height: 51.6vw;
+        background-color: #ffffff;
+        .payTitle{
+          width: 100vw;
+          height: 11.7333vw;
+          padding-left: 4.1333vw;
+          line-height: 11.7333vw;
+          font-size: 3.7333vw;
+          font-family: PingFang-SC-Regular;
+          font-weight: Regular;
+          color: #666666;
+        }
+        .payMain{
+          width: 100vw;
+          height: 39.7333vw;
+          overflow: auto;
+          .payOne{
+            width: 100vw;
+            height: 13.24vw;
+            border-top: 0.1333vw solid #EEEEEE;
+            padding-left: 4vw;
+            line-height: 13.2vw;
+            color: #333333;
+            font-size: 3.7333vw;
+            font-family:PingFang SC;
+            font-weight:400;
+            .inputRadio{
+              width: 40vw;
+              height: 13.0667vw;
+              float: right;
+              padding-right: 4vw;
+              position: relative;
+              .right{
+                float: right;
+                display: block;
+                margin-top: 5.3333vw;
+                margin-right: 1.3333vw;
+              }
+              .inputLab{
+                width: 4vw;
+                height: 4vw;
+                border-radius: 50%;
+                border: 1px solid #999999FF; 
+                display: block;
+                position: absolute;
+                top: 4.8vw;
+                right: 4.8vw;
+                background-color: white;
+                z-index: 500;
+                .iconfont{
+                  width: 4vw;
+                  height: 4vw;
+                  display: block;
+                  text-align: center;
+                  line-height: 4vw;
+                  font-size: 1.5vw;
+                  color: white;
+                  padding-right: 0.4vw;
+                }
+              }
+              .inputLab2{
+                width: 4vw;
+                height: 4vw;
+                border-radius: 50%;
+                border: 1px solid #999999FF; 
+                display: block;
+                position: absolute;
+                top: 4.8vw;
+                right: 4.8vw;
+                background-color: #714BFB;
+                z-index: 500;
+                .iconfont{
+                  width: 4vw;
+                  height: 4vw;
+                  display: block;
+                  text-align: center;
+                  line-height: 4vw;
+                  font-size: 1.5vw;
+                  color: white;
+                  padding-right: 0.4vw;
+                }
+              }
+              .left{
+                float: right;
+                display: block;
+                width: 20vw;
+                height: 13.0667vw;
+                font-size: 3.4667vw;
+                font-family:PingFang-SC-Bold ;
+                font-weight: bold;
+                color: #714BFB;
+                text-align: right;
+                padding-right: 5.8vw;
+              }
+            }
+          }
+        }
+      }
+      .selectpay{
+        width: 100%;
+        overflow: auto;
+        .selectTitle{
+          display: block;
+          font-size: 3.7333vw;
+          font-family:PingFang SC;
+          font-weight:400;
+          color:rgba(101,101,101,1);
+          margin-top: 4vw;
+          margin-left: 4vw;
+        }
+        .wx{
+          width: 29.3333vw;
+          height: 20vw;
+          background-image: url('../img/czzs_btn_wx_selected.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-radius: 2.6667vw;
+          margin-top: 4vw;
+          margin-left: 4vw;
+          float: left;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .zfb{
+          width: 29.3333vw;
+          height: 20vw;
+          // background-image: url('../img/czzs_btn_wx_selected.png');
+          // background-repeat: no-repeat;
+          // background-size: cover;
+          background-color: #ffffff;
+          border-radius: 2.6667vw;
+          margin-top: 4vw;
+          margin-left: 4vw;
+          float: left;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .submit{
+        width: 100vw;
+        height: 75.2vw;
+        position: relative;
+        .submitMessage{
+          color:#999999;
+          font-size: 3.2vw;
+          font-weight: 400; 
+          font-family:PingFang SC;
+          text-align: center;   
+          display: inline-block;
+          position: absolute;
+          top: 10.4vw;
+          left: 20.9333vw;
+        }
+        .submitBtn{
+          width: 82.6667vw;
+          height: 10.6667vw;
+          background-color: #714BFB;
+          border-radius: 5.3333vw;
+          position: absolute;
+          top: 17.4667vw;
+          left: 8.6667vw;
+          font-family:PingFang SC;
+          font-weight:bold;
+          color:rgba(255,255,255,1);
+          font-size: 4vw;
+          line-height: 10.6667vw;
+          text-align: center;
+          opacity: 0.4;
+          // filter: alpha(opacity = 40);
+          -moz-opacity: 0.4;
+        }
+        .submitPro{
+          width: 61vw;
+          height: 3.6vw;
+          position: absolute;
+          top: 36.1333vw;
+          left: 20.6667vw;
+          .inputBox{
+            width: 4vw;
+            height: 4vw;
+            float: left;
+            #inputBox{
+              display: block;
+              position: absolute;
+              margin: 0.6667vw;
+              top: 0.1333vw;
+              left: 0vw;
+            }
+            .inputLab3{
+              width: 4vw;
+              height: 4vw;
+              border-radius: 50%;
+              border: 1px solid #999999FF; 
+              display: block;
+              position: absolute;
+              top: -0.2667vw;
+              left: 0;
+              background-color: white;
+              z-index: 500;
+              .iconfont{
+                width: 4vw;
+                height: 4vw;
+                display: block;
+                text-align: center;
+                line-height: 4vw;
+                font-size: 1.5vw;
+                color: white;
+                padding-right: 0.4vw;
+              }
+            }
+            .inputLab4{
+              width: 4vw;
+              height: 4vw;
+              border-radius: 50%;
+              border: 1px solid #999999FF; 
+              display: block;
+              position: absolute;
+              top: 0.4vw;
+              left: 0;
+              background-color: #714BFB;
+              z-index: 500;
+              .iconfont{
+                width: 4vw;
+                height: 4vw;
+                display: block;
+                text-align: center;
+                line-height: 4vw;
+                font-size: 1.5vw;
+                color: white;
+                padding-right: 0.4vw;
+              }
+            }
+          }
+          .subText{
+            font-size: 3.2vw;
+            color: #666666;
+            font-family:PingFang SC;
+            font-weight:400;
+            display: inline-block;
+            line-height: 4vw;
+            padding-left: 2.5333vw;
+          }
+          .subPro{
+            font-size: 3.2vw;
+            color: #FF7443;
+            font-family:PingFang SC;
+            font-weight:400;
+            display: block;
+            float:right;
+            line-height: 4vw;
+          }
+        }
+      }
+    }
+  }
+  .tankuang{
+    width: 100%;
+    height: 100%;
+    z-index: 800;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    .tankuangMain{
+      width: 69.3333vw;
+      height: 65.3333vw;
+      background-color: #ffffff;
+      border-radius: 2.6667vw;
+      margin-top: 50.1333vw;
+      margin-left: 15.3333vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      .quxiao{
+        width: 2.9333vw;
+        height: 2.9333vw;
+        position: absolute;
+        top: 4vw;
+        right: 4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .iconfont{
+          color: #999999FF;
+          font-size: 2.9333vw;
+        }
+      }
+      .head{
+        margin-top: 5.3333vw;
+        font-size: 4vw;
+        font-family:PingFang SC;
+        font-weight:bold;
+        color:rgba(51,51,51,1);
+      }
+      .bottom{
+        width: 60.4vw;
+        height: 47.2vw;
+        margin-top: 5.3333vw;
+        font-size: 3.4667vw;
+        font-family:PingFang SC;
+        font-weight:400;
+        color:rgba(0,0,0,1);
+        line-height: 5.3333vw;
+      }
+    }
+  }
+}
